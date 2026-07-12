@@ -8,6 +8,7 @@ import com.kushagra.quizapp.Service.QuestionService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -28,5 +29,8 @@ public class Questioncontroller {
     public List<Question> getAllQuestions() {
         return questionService.getAllQuestions();
     }
-    
+    @GetMapping("category/{category}")
+    public List<Question> getQuestionCategory(@PathVariable String category){
+        return questionService.getQuestionByCategory(category);
+    }
 }
