@@ -8,6 +8,6 @@ import com.kushagra.quizapp.Question;
 public interface QuestionDao extends JpaRepository<Question, Integer> {
 
     List<Question> findByCategory(String category);
-
+vsvs
     
 }
